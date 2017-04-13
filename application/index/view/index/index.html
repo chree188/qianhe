@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html id="bodys">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="keywords" content="{$system.seo_keywords}">
+    <meta name="description" content="{$system.seo_description}">
+    <title>乾禾智能</title>
+    <link rel="icon" type="image/png" href="__PUBLIC__/images/favicon.png">
+    <link href="__PUBLIC__/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="__PUBLIC__/css/public.css" rel="stylesheet" type="text/css" />
+    <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <!-- 必要样式 -->
+    <script type="text/javascript" src="__PUBLIC__/js/case.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/news.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/jquery.banner.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
+</head>
+
+<body>
+    <div class="container1">
+        <!--pc头部-->
+        <div class="header visible-lg-block ">
+            <div class="headercenter">
+                <div class="logo fl">
+                    <a href="index.html"> <img alt="乾禾智能" src="__PUBLIC__/images/logo.png"></a>
+                </div>
+                <ul class="headnav fl">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="aboutus.html">关于我们</a></li>
+                    <li>
+                        <a href="product.html">产品展示</a>
+                        <ul>
+                            <li><a href="product.html#qhzn">乾禾智能</a></li>
+                            <li><a href="product.html#qhnt">乾禾暖通</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="cases.html">案例展示</a></li>
+                    <li><a href="culture.html">企业文化</a></li>
+                    <li><a href="honor.html">企业荣誉</a></li>
+                    <li><a href="news.html">新闻资讯</a></li>
+                    <li><a href="contact.html">联系我们</a></li>
+                </ul>
+                <div class="tel fl">
+                    <img src="__PUBLIC__/images/phone.png" class="fl">
+                    <div class="telnum fl">
+                        <p>资讯热线 </p>
+                        <p>400-600-1366</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--移动端头部-->
+        <nav class="navbar navbar-default visible-xs-block">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                        aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        </button>
+                    <a class="navbarimg" href="index.html">
+                        <img alt="乾禾智能" src="__PUBLIC__/images/logo.png">
+                    </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="aboutus.html">关于我们</a></li>
+                        <li><a href="product.html">产品展示</a></li>
+                        <li><a href="case.html">案例展示</a></li>
+                        <li><a href="culture">企业文化</a></li>
+                        <li><a href="honor.html">企业荣誉</a></li>
+                        <li><a href="news.html">新闻资讯</a></li>
+                        <li><a href="contact.html">联系我们</a></li>
+                    </ul>
+
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+        <!--banner-->
+        <div class="banner visible-lg-block">
+            <ul class="banList">
+                <li v-for="(index,dh) in view.pcbanner" class="{{index|is_active}}">
+                    <a href="aboutus.html"><img :src="'__IMAGE__/'+dh.path" alt="乾禾智能"></a>
+                </li>
+            </ul>
+            <div class="fomW">
+                <div class="jsNav">
+                    <a v-for="(index,dh) in view.pcbanner" class="{{index|is_current}}"></a>
+                </div>
+            </div>
+        </div>
+        <!--移动端banner-->
+        <div id="carousel-example-generic" class="carousel slide visible-xs-block" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators carousellocal">
+                <li data-target="#carousel-example-generic" v-for="(index,pcbanner) in view.mbanner" data-slide-to="{{index}}" class="{{index|is_active}}"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item  active">
+                    <img src="__PUBLIC__/images/mbanner01.png" alt="乾禾智能">
+                </div>
+                <div class="item">
+                    <img src="__PUBLIC__/images/mbanner02.png" alt="乾禾智能">
+                </div>
+                <div class="item">
+                    <img src="__PUBLIC__/images/mbanner03.png" alt="乾禾智能">
+                </div>
+            </div>
+        </div>
+        <!--关于我们-->
+        <div class="aboutus">
+            <div class="indextitle col-lg-12 col-xs-12">
+                <p>ABOUT US</p>
+                <font>关于我们</font>
+            </div>
+            <div class="abcontent">
+                <div class="ableft fl visible-lg-block">
+                    乾 禾 企业
+                </div>
+                <div class="abcenter fl visible-lg-block">
+                    <em>{{view.aboutus.title}}</em>
+                    <p>{{view.aboutus.description}}</p>
+                </div>
+                <!--移动端显示-->
+                <div class="abcenter fl visible-xs-block">
+                    <em>{{view.aboutus.title}}</em>
+                    <p>{{view.aboutus.description}}</p>
+                </div>
+                <div class="abright fl visible-lg-block"><img src="__IMAGE__/{{view.aboutus.url}}"></div>
+            </div>
+        </div>
+        <!--智能家居-->
+
+        <div class="home fl">
+            <div class="homein">
+                <div class="indextitle col-lg-12">
+                    <p>INTELLIGENT HOME</p>
+                    <font>智能家居</font>
+                </div>
+                <div class="homeshow">
+                    <ul>
+                        <li class="col-xs-12">
+                            <div class="znjj">
+                                <p>智能家居</p>
+                                <font></font>
+                                <em><a href="product.html#qhzn">查看详情</a></em>
+                            </div>
+                        </li>
+                        <li class="col-xs-12 visible-lg-block">
+                            <div class="video">
+                                <embed src='http://player.youku.com/player.php/sid/XMjUyMzE1ODkyNA==/v.swf' allowFullScreen='true' quality='high' width='390'
+                                    height='390' align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>
+                            </div>
+                        </li>
+                        <li class="col-xs-12">
+                            <div class="znjj">
+                                <p>智能暖通</p>
+                                <font></font>
+                                <em><a href="product.html#qhnt">查看详情</a></em>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--经典案例-->
+        <div class="case fl">
+            <div class="indextitle col-lg-12 col-xs-12">
+                <p>CLASSIC CASE</p>
+                <font>经典案例</font>
+            </div>
+            <div class="indexmaindiv" id="indexmaindiv">
+                <div class="indexmaindiv1 clearfix">
+                    <div class="stylesgoleft" id="goleft"></div>
+                    <div class="maindiv1 " id="maindiv1">
+                        <ul id="count1">
+                            <li v-for="c in view.cases">
+                                <a href="cases.html?id={{c.id}}">
+                                    <div class="playerdetail">
+                                        <div class="detailimg"><img src="__IMAGE__/{{c.img}}" /></div>
+                                        <div class="teanames">{{c.title}}</div>
+                                        <div class="teadetail">{{c.content}}</div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="stylesgoright" id="goright"></div>
+                </div>
+            </div>
+        </div>
+        <!--资讯中心-->
+        <div class="information fl">
+            <div class="informationin">
+                <div class="indextitle col-lg-12">
+                    <p>INFORMATION CENTER</p>
+                    <font>资讯中心</font>
+                </div>
+                <div class="newsconent fl newsbox">
+                    <div class="focus" id="focus">
+                        <div class="left visible-lg-block">
+                            <ul>
+                                <li class="active" style="opacity:1; filter:alpha(opacity=100);">
+                                    <p>图一</p><img src="__PUBLIC__/images/22.png" /></li>
+                                <li>
+                                    <p>图二</p><img src="__PUBLIC__/images/21.png" /></li>
+                                <li>
+                                    <p>图三</p><img src="__PUBLIC__/images/23.png" /></li>
+                                <li>
+                                    <p>图四</p><img src="__PUBLIC__/images/24.png" /></li>
+                            </ul>
+                        </div>
+                        <div class="right">
+                            <ul>
+                                <li class="active" v-for="new in view.news">
+                                    <a href="newsdetail.html?id={{new.id}}">
+                                        <div class="newstime fl">
+                                            <em>{{new.createtime|datatime|subriqi}}</em>
+                                            <span>{{new.createtime|datatime|subrny}}</span>
+                                        </div>
+                                        <div class="newsshow fl">
+                                            <font>{{new.title}}</font>
+                                            <span>{{new.description}}</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--荣誉-->
+        <div class="honor fl visible-lg-block">
+            <div class="honorin">
+                <div class="indextitle col-lg-12">
+                    <p>HONOR</p>
+                    <font>荣誉墙</font>
+                </div>
+                <ul>
+                    <li class="col-xs-6" v-for="honor in view.honor"><img :src="'__IMAGE__/'+honor.url"></li>
+                </ul>
+            </div>
+        </div>
+        <!--荣誉end-->
+        <!--底部-->
+        <div class="bottom fl visible-lg-block">
+            <div class="bottomup">
+                <div class="bottomnav">
+                    <em>关于我们</em>
+                    <ul>
+                        <li><a href="aboutus.html">关于我们</a></li>
+                        <li><a href="culture.html">企业文化</a></li>
+                        <li><a href="honor.html">企业荣誉</a></li>
+                        <li><a href="news.html">新闻资讯</a></li>
+                    </ul>
+                </div>
+                <div class="bottomnav">
+                    <em>产品案例</em>
+                    <ul>
+                        <li><a href="product.html">产品中心</a></li>
+                        <li><a href="cases.html">案例展示</a></li>
+                    </ul>
+                </div>
+                <div class="bottomnav">
+                    <em>联系我们</em>
+                    <ul>
+                        <li><a href="contact.html">联系方式</a></li>
+                        <li><a href="contact.html">公司地址</a></li>
+                        <li><a href="tencent://message/?uin=497586856&amp;Site=有事Q我&amp;Menu=yes">在线咨询</a></li>
+                    </ul>
+                </div>
+                <div class="bottomtel fl">
+                    <ul>
+                        <li class="li-tel">
+                            电话<br>
+                            <strong>0571-87381866	88231138</strong>
+                        </li>
+                        <li class="li-fox">
+                            传真<br>
+                            <strong>0571-85263910</strong>
+                        </li>
+                        <li class="li-phone">
+                            全国客服热线<br>
+                            <strong>400-600-1366</strong>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bottomweixin fr">
+                    <ul>
+                        <li>
+                            <img src="__PUBLIC__/images/weixin1.png">
+                            <p>杭州乾禾科技有限公司</p>
+                            <p>官方微信</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bottomdown">
+                <div class="bottomdownin">
+                    <div class="fl ft-logo">
+                        <p class="f12">杭州乾禾科技有限公司 版权所有 © 2017 粤ICP备12345678号-9</p>
+                    </div>
+                    <div class="fr ft-address">
+                        <p class="f14">杭州市西湖区古墩路707号城市发展大厦901</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--移动端底部-->
+        <div class="mbottom fl visible-xs-block">
+            <div class="col-xs-4" style="border-right:2px solid #fff;"><a href="index.html">首页</a></div>
+            <div class="col-xs-4" style="border-right:2px solid #fff;"><i class="fa fa-qq" aria-hidden="true"></i><a href="tencent://message/?uin=497586856&amp;Site=有事Q我&amp;Menu=yes">在线咨询</a></div>
+            <div class="col-xs-4"><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:0571-85263910">客服热线</a></div>
+        </div>
+
+    </div>
+</body>
+<script type="text/javascript">
+    $(window).scroll(function () {
+        // var t = document.documentElement.scrollTop || document.body.scrollTop;
+        var scrollTop = $(this).scrollTop();//scrollTop() 方法返回或设置匹配元素的滚动条的垂直位置。
+        if (scrollTop >= 505) {
+            $('.header').addClass("header2")
+        }
+    });
+    // tab切换
+    $(function () {
+        $('.newstab li').on('click', function () {
+            $(this).addClass("newstitletab").siblings().removeClass("newstitletab");//控制样式
+            var index = $(this).index();//获取当前选中的索引值
+            $(".newsbox").hide().eq(index).show();
+        })
+    });
+
+    //时间过滤器
+    Vue.filter('datatime', function (time) {
+        var time = new Date(parseInt(time) * 1000); //获取一个时间对象  注意：如果是uinx时间戳记得乘于1000。比如php函数time()获得的时间戳就要乘于1000     
+        Y = time.getFullYear() + '-';
+        M = (time.getMonth() + 1 < 10 ? '0' + (time.getMonth() + 1) : time.getMonth() + 1) + '-';
+        D = time.getDate() + ' ';
+        h = (time.getHours() < 10 ? '0' + time.getHours() : time.getHours()) + ':';
+        m = (time.getMinutes() < 10 ? '0' + time.getMinutes() : time.getMinutes()) + ':';
+        s = (time.getSeconds() < 10 ? '0' + time.getSeconds() : time.getSeconds());
+        return Y + M + D;
+    })
+    // 日期截取
+    Vue.filter('subriqi', function (value) {
+        return value.substring(8, 10);
+    })
+    // 日期截取
+    Vue.filter('subrny', function (value) {
+        return value.substring(0, 7);
+    })
+    // vuejs  banner 过滤器
+    Vue.filter('is_current', function (value) {
+        switch (value) {
+            case 0:
+                value = "current";
+                break;
+            default:
+                value = "trigger";
+                break;
+        }
+        return value;
+    })
+    // vuejs  banner 过滤器
+    Vue.filter('is_active', function (value) {
+        switch (value) {
+            case 0:
+                value = "active";
+                break;
+            default:
+                value = "";
+                break;
+        }
+        return value;
+    })
+    // vuejs
+    var indexshow = new Vue({
+        el: "#bodys",
+        data: {
+            view: {},
+        },
+        ready: function () {
+            $.ajax({
+                url: "{:url('index/Index/ajaxIndex')}",
+                success: function (data) {
+                    data = JSON.parse(data); //将字符串转换成json格式         
+                    indexshow.view = data;//将数据赋值到view对象
+                    //vue的钩子函数  当DOM通过Vue生成完毕的时候 调用方法
+                    Vue.nextTick(function () {
+                        console.log('此时通过vue渲染的DOM 已经完成');
+                        $(function () {
+                            $(".banner").swBanner();
+                        });
+                        var oBtnLeft = document.getElementById("goleft");
+                        var oBtnRight = document.getElementById("goright");
+                        var oDiv = document.getElementById("indexmaindiv");
+                        var oDiv1 = document.getElementById("maindiv1");
+                        var oUl = oDiv.getElementsByTagName("ul")[0];
+                        var aLi = oUl.getElementsByTagName("li");
+                        var now = -4 * (aLi[0].offsetWidth + 26);
+                        oUl.style.width = aLi.length * (aLi[0].offsetWidth + 26) + 'px';
+                        oBtnRight.onclick = function () {
+                            var n = Math.floor((aLi.length * (aLi[0].offsetWidth + 26) + oUl.offsetLeft) / aLi[0].offsetWidth);
+
+                            if (n <= 4) {
+                                move(oUl, 'left', 0);
+                            }
+                            else {
+                                move(oUl, 'left', oUl.offsetLeft + now);
+                            }
+                        }
+                        oBtnLeft.onclick = function () {
+                            var now1 = -Math.floor((aLi.length / 4)) * 4 * (aLi[0].offsetWidth + 26);
+
+                            if (oUl.offsetLeft >= 0) {
+                                move(oUl, 'left', now1);
+                            }
+                            else {
+                                move(oUl, 'left', oUl.offsetLeft - now);
+                            }
+                        }
+                        var timer = setInterval(oBtnRight.onclick, 5000);
+                        oDiv.onmouseover = function () {
+                            clearInterval(timer);
+                        }
+                        oDiv.onmouseout = function () {
+                            timer = setInterval(oBtnRight.onclick, 5000);
+                        }
+
+                    });
+                },
+                error: function (data) {
+                    console.log("error!");
+                }
+            });
+        }
+    });
+
+</script>
+
+</html>

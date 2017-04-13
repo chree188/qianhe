@@ -1,0 +1,113 @@
+{extend name="pub/extend" /}
+
+{block name="title"}
+    <title>编辑功能特点</title>
+{/block}
+
+{block name="link"}
+    <!--dynamic table-->
+    <link href="__PUBLIC__/js/advanced-datatable/css/demo_page.css" rel="stylesheet" />
+    <link href="__PUBLIC__/js/advanced-datatable/css/demo_table.css" rel="stylesheet" />
+    <link rel="stylesheet" href="__PUBLIC__/js/data-tables/DT_bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/my.css" />
+
+    <!--multi-select-->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/js/jquery-multi-select/css/multi-select.css" />
+
+    <!--file upload-->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/bootstrap-fileupload.min.css" />
+
+    <!--tags input-->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/js/jquery-tags-input/jquery.tagsinput.css" />
+{/block}
+
+{block name="bread"}
+    <ul class="breadcrumb">
+        <li>
+            <a href="{:url('Index/index')}">首页</a>
+        </li>
+        <li>
+            <a href="{:url('Cases/lst')}">案例列表</a>
+        </li>
+        <li class="active">编辑设备</li>
+    </ul>
+{/block}
+
+{block name="content"}
+    <div class="row">
+        <div class="col-lg-12">
+            <section class="panel">
+                <header class="panel-heading">
+                    编辑设备
+                </header>
+                <div class="panel-body">
+                    <div class=" form">
+                        <form class="cmxform form-horizontal adminex-form" id="commentForm" method="post" action="{:url('Cases/editEqui',array('id' => $id))}" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <div id="chara">
+                                    {volist name="equi" id="vo"}
+                                        <label class="control-label col-lg-1"><i class="fa fa-times" onclick="del(this)" style="color:red;cursor:pointer;"></i></label>
+                                        <div class="col-lg-11" style="margin-bottom:20px;">
+                                            <input class=" form-control" maxlength="255" id="name" name="name[]" minlength="2" type="text" value="{$vo.name}" placeholder="设备名称" required="required" />
+                                        </div>
+                                        <div class="form-group"></div>
+                                    {/volist}
+                                </div>
+                                <div class="col-lg-10 col-lg-offset-1">
+                                    <a href="javascript:;" class="btn btn-success btn-xs" onclick="addchara()">添加更多特点</a>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-lg-offset-1 col-lg-11">
+                                    <button class="btn btn-primary" type="submit">保存设备</button>
+                                    <button class="btn btn-default" type="reset">重新添加</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+{/block}
+
+{block name="js"}
+    <!--dynamic table-->
+    <script type="text/javascript" language="javascript" src="__PUBLIC__/js/advanced-datatable/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/data-tables/DT_bootstrap.js"></script>
+    <!--dynamic table initialization -->
+    <!-- <script src="__PUBLIC__/js/dynamic_table_init.js"></script> -->
+
+    <!--icheck -->
+    <script src="__PUBLIC__/js/iCheck/jquery.icheck.js"></script>
+    <script src="__PUBLIC__/js/icheck-init.js"></script>
+    <!--multi-select-->
+    <script type="text/javascript" src="__PUBLIC__/js/jquery-multi-select/js/jquery.multi-select.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/jquery-multi-select/js/jquery.quicksearch.js"></script>
+    <script src="__PUBLIC__/js/multi-select-init.js"></script>
+    <!--spinner-->
+    <script type="text/javascript" src="__PUBLIC__/js/fuelux/js/spinner.min.js"></script>
+    <script src="__PUBLIC__/js/spinner-init.js"></script>
+    <!--file upload-->
+    <script type="text/javascript" src="__PUBLIC__/js/bootstrap-fileupload.min.js"></script>
+    <!--tags input-->
+    <script src="__PUBLIC__/js/jquery-tags-input/jquery.tagsinput.js"></script>
+    <script src="__PUBLIC__/js/tagsinput-init.js"></script>
+    <!--bootstrap input mask-->
+    <script type="text/javascript" src="__PUBLIC__/js/bootstrap-inputmask/bootstrap-inputmask.min.js"></script>
+
+    <script type="text/javascript">
+        //特点添加更多
+        function addchara(){
+            $('#chara').append("<label class='control-label col-lg-1'><i class='fa fa-times' onclick='del(this)' style='color:red;cursor:pointer;'></i></label><div class='col-lg-11' style='margin-bottom:20px;'><input class=' form-control' maxlength='255' id='name' name='name[]' minlength='2' type='text' placeholder='设备名称' required='required' /></div>");
+        }
+
+        //删除元素
+        function del(obj){
+            $(obj).parent().next().next().next().remove();
+            $(obj).parent().next().next().remove();
+            $(obj).parent().next().remove();
+            $(obj).parent().remove();
+        }
+    </script>
+{/block}

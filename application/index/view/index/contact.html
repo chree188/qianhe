@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html id="bodys">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="keywords" content="{$system.seo_keywords}">
+    <meta name="description" content="{$system.seo_description}">
+    <title>联系我们</title>
+    <link rel="icon" type="image/png" href="__PUBLIC__/images/favicon.png">
+    <link href="__PUBLIC__/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="__PUBLIC__/css/public.css" rel="stylesheet" type="text/css" />
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <!-- 必要样式 -->
+    <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <!--<script src="__PUBLIC__/js/map.js"></script>-->
+    <script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
+    <style type="text/css">
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .iw_poi_title {
+            color: #CC5522;
+            font-size: 14px;
+            font-weight: bold;
+            overflow: hidden;
+            padding-right: 13px;
+            white-space: nowrap
+        }
+        
+        .iw_poi_content {
+            font: 12px arial, sans-serif;
+            overflow: visible;
+            padding-top: 4px;
+            white-space: -moz-pre-wrap;
+            word-wrap: break-word
+        }
+    </style>
+</head>
+
+<body id="bodys">
+    <div class="container1">
+        <!--pc头部-->
+        <div class="header visible-lg-block ">
+            <div class="headercenter">
+                <div class="logo fl">
+                    <a href="index.html"> <img alt="乾禾智能" src="__PUBLIC__/images/logo.png"></a>
+                </div>
+                <ul class="headnav fl">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="aboutus.html">关于我们</a></li>
+                    <li>
+                        <a href="product.html">产品展示</a>
+                        <ul>
+                            <li><a href="product.html#qhzn">乾禾智能</a></li>
+                            <li><a href="product.html#qhnt">乾禾暖通</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="cases.html">案例展示</a></li>
+                    <li><a href="culture.html">企业文化</a></li>
+                    <li><a href="honor.html">企业荣誉</a></li>
+                    <li><a href="news.html">新闻资讯</a></li>
+                    <li><a href="contact.html">联系我们</a></li>
+                </ul>
+                <div class="tel fl">
+                    <img src="__PUBLIC__/images/phone.png" class="fl">
+                    <div class="telnum fl">
+                        <p>资讯热线 </p>
+                        <p>400-600-1366</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--移动端头部-->
+        <nav class="navbar navbar-default visible-xs-block">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                        aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        </button>
+                    <a class="navbarimg" href="index.html">
+                        <img alt="乾禾智能" src="__PUBLIC__/images/logo.png">
+                    </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="aboutus.html">关于我们</a></li>
+                        <li><a href="product.html">产品展示</a></li>
+                        <li><a href="cases.html">案例展示</a></li>
+                        <li><a href="culture.html">企业文化</a></li>
+                        <li><a href="honor.html">企业荣誉</a></li>
+                        <li><a href="news.html">新闻资讯</a></li>
+                        <li><a href="contact.html">联系我们</a></li>
+                    </ul>
+
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+        <!--内页banner-->
+        <div class="nybanner"></div>
+        <!--位置-->
+        <div class="position">
+            您现在的位置:联系我们
+        </div>
+        <!--荣誉-->
+        <div class="nyhonor">
+            <div class="nytitle">
+                <i></i>
+                <h1>联系我们</h1>
+                <label></label>
+                <font>您的建议和支持是对我们最大的肯定
+                </font>
+            </div>
+        </div>
+        <div class="contact">
+            <div class="contactlist">
+                <div class="col-lg-3 col-xs-6">
+                    <img src="__PUBLIC__/images/contacticon_01.png">
+                    <em>地址</em>
+                    <span>{{view.system.address}}</span>
+                </div>
+                <div class="col-lg-3 col-xs-6">
+                    <img src="__PUBLIC__/images/contacticon_02.png">
+                    <em>电话</em>
+                    <span>客服热线：<br>{{view.system.tel1}} /
+	      {{view.system.tel2}} <br>
+全国客服热线:{{view.system.sll}}  </span>
+                </div>
+                <div class="col-lg-3 col-xs-6">
+                    <img src="__PUBLIC__/images/contacticon_03.png">
+                    <em>邮箱</em>
+                    <span>客服邮箱：<br>{{view.system.email}}</span>
+                </div>
+                <div class="col-lg-3 col-xs-6">
+                    <img src="__PUBLIC__/images/contacticon_04.png">
+                    <em>传真</em>
+                    <span>传真电话：<br>{{view.system.fax}}</span>
+                </div>
+            </div>
+        </div>
+        <!--百度地图容器pc-->
+        <div class="map visible-lg-block">
+            <div style="width:1200px;height:400px;margin:0 auto;border:#ccc solid 1px;" id="dituContent"></div>
+        </div>
+        <!--留言板-->
+        <div class="col-lg-3"></div>
+        <div class="message col-lg-6">
+            <h1>留言板</h1>
+            <form>
+                <div class="form-group col-lg-6">
+                    <input type="text" class="form-control" placeholder="姓名" v-model="msg.name">
+                </div>
+                <div class="form-group col-lg-6">
+                    <input type="text" class="form-control" placeholder="电话" v-model="msg.tel">
+                </div>
+                <div class="form-group col-lg-12">
+                    <textarea class="form-control" placeholder="留言板" rows="6" v-model="msg.content"></textarea>
+                </div>
+                <div class="submitmessage col-lg-12" id="pmt"><span><span></div>
+                <button type="button" class="messagebtn fr" @click="submit()">提交</button>
+            </form>
+        </div>
+        <div class="col-lg-3"></div>
+        <!--移动空格块-->
+        <div class="mblank visible-xs-block"></div>
+        <!--底部-->
+        <div class="bottom fl visible-lg-block">
+            <div class="bottomup">
+                <div class="bottomnav">
+                    <em>关于我们</em>
+                    <ul>
+                        <li><a href="aboutus.html">关于我们</a></li>
+                        <li><a href="culture.html">企业文化</a></li>
+                        <li><a href="honor.html">企业荣誉</a></li>
+                        <li><a href="news.html">新闻资讯</a></li>
+                    </ul>
+                </div>
+                <div class="bottomnav">
+                    <em>产品案例</em>
+                    <ul>
+                        <li><a href="product.html">产品中心</a></li>
+                        <li><a href="cases.html">案例展示</a></li>
+                    </ul>
+                </div>
+                <div class="bottomnav">
+                    <em>联系我们</em>
+                    <ul>
+                        <li><a href="contact.html">联系方式</a></li>
+                        <li><a href="contact.html">公司地址</a></li>
+                        <li><a href="tencent://message/?uin=3563713402&amp;Site=有事Q我&amp;Menu=yes">在线咨询</a></li>
+                    </ul>
+                </div>
+                <div class="bottomtel fl">
+                    <ul>
+                        <li class="li-tel">
+                            电话<br>
+                            <strong>0571-87381866	88231138</strong>
+                        </li>
+                        <li class="li-fox">
+                            传真<br>
+                            <strong>0571-85263910</strong>
+                        </li>
+                        <li class="li-phone">
+                            全国客服热线<br>
+                            <strong>400-600-1366</strong>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bottomweixin fr">
+                    <ul>
+                        <li>
+                            <img src="__PUBLIC__/images/weixin1.png">
+                            <p>杭州乾禾科技有限公司</p>
+                            <p>官方微信</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bottomdown">
+                <div class="bottomdownin">
+                    <div class="fl ft-logo">
+                        <p class="f12">杭州乾禾科技有限公司 版权所有 © 2017 粤ICP备12345678号-9</p>
+                    </div>
+                    <div class="fr ft-address">
+                        <p class="f14">杭州市西湖区古墩路707号城市发展大厦901</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--移动端底部-->
+        <div class="mbottom fl visible-xs-block">
+            <div class="col-xs-4" style="border-right:2px solid #fff;"><a href="index.html">首页</a></div>
+            <div class="col-xs-4" style="border-right:2px solid #fff;"><i class="fa fa-qq" aria-hidden="true"></i><a href="tencent://message/?uin=3563713402&amp;Site=有事Q我&amp;Menu=yes">在线咨询</a></div>
+            <div class="col-xs-4"><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:0571-85263910">客服热线</a></div>
+        </div>
+    </div>
+</body>
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(window).scroll(function () {
+        // var t = document.documentElement.scrollTop || document.body.scrollTop;
+        var scrollTop = $(this).scrollTop();//scrollTop() 方法返回或设置匹配元素的滚动条的垂直位置。
+        if (scrollTop >= 300) {
+            $('.header').addClass("header2")
+        }
+    });
+    //创建和初始化地图函数：
+    function initMap() {
+        createMap();//创建地图
+        setMapEvent();//设置地图事件
+        addMapControl();//向地图添加控件
+        addMarker();//向地图中添加marker
+    }
+
+    //创建地图函数：
+    function createMap() {
+        var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+        var point = new BMap.Point(120.101713, 30.3163);//定义一个中心点坐标
+        map.centerAndZoom(point, 18);//设定地图的中心点和坐标并将地图显示在地图容器中
+        window.map = map;//将map变量存储在全局
+    }
+
+    //地图事件设置函数：
+    function setMapEvent() {
+        map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+        map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+        map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+        map.enableKeyboard();//启用键盘上下左右键移动地图
+    }
+
+    //地图控件添加函数：
+    function addMapControl() {
+        //向地图中添加缩放控件
+        var ctrl_nav = new BMap.NavigationControl({ anchor: BMAP_ANCHOR_TOP_LEFT, type: BMAP_NAVIGATION_CONTROL_LARGE });
+        map.addControl(ctrl_nav);
+        //向地图中添加缩略图控件
+        var ctrl_ove = new BMap.OverviewMapControl({ anchor: BMAP_ANCHOR_BOTTOM_RIGHT, isOpen: 1 });
+        map.addControl(ctrl_ove);
+        //向地图中添加比例尺控件
+        var ctrl_sca = new BMap.ScaleControl({ anchor: BMAP_ANCHOR_BOTTOM_LEFT });
+        map.addControl(ctrl_sca);
+    }
+
+    //标注点数组
+    var markerArr = [{ title: "公司地址", content: "杭州市西湖区古墩路707号<br/>城市发展大厦901", point: "120.101915|30.316409", isOpen: 1, icon: { w: 21, h: 21, l: 0, t: 0, x: 6, lb: 5 } }
+    ];
+    //创建marker
+    function addMarker() {
+        for (var i = 0; i < markerArr.length; i++) {
+            var json = markerArr[i];
+            var p0 = json.point.split("|")[0];
+            var p1 = json.point.split("|")[1];
+            var point = new BMap.Point(p0, p1);
+            var iconImg = createIcon(json.icon);
+            var marker = new BMap.Marker(point, { icon: iconImg });
+            var iw = createInfoWindow(i);
+            var label = new BMap.Label(json.title, { "offset": new BMap.Size(json.icon.lb - json.icon.x + 10, -20) });
+            marker.setLabel(label);
+            map.addOverlay(marker);
+            label.setStyle({
+                borderColor: "#808080",
+                color: "#333",
+                cursor: "pointer"
+            });
+
+            (function () {
+                var index = i;
+                var _iw = createInfoWindow(i);
+                var _marker = marker;
+                _marker.addEventListener("click", function () {
+                    this.openInfoWindow(_iw);
+                });
+                _iw.addEventListener("open", function () {
+                    _marker.getLabel().hide();
+                })
+                _iw.addEventListener("close", function () {
+                    _marker.getLabel().show();
+                })
+                label.addEventListener("click", function () {
+                    _marker.openInfoWindow(_iw);
+                })
+                if (!!json.isOpen) {
+                    label.hide();
+                    _marker.openInfoWindow(_iw);
+                }
+            })()
+        }
+    }
+    //创建InfoWindow
+    function createInfoWindow(i) {
+        var json = markerArr[i];
+        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>" + json.content + "</div>");
+        return iw;
+    }
+    //创建一个Icon
+    function createIcon(json) {
+        var icon = new BMap.Icon("__PUBLIC__/images/us_mk_icon.png", new BMap.Size(json.w, json.h), { imageOffset: new BMap.Size(-json.l, -json.t), infoWindowOffset: new BMap.Size(json.lb + 5, 1), offset: new BMap.Size(json.x, json.h) })
+        return icon;
+    }
+
+    initMap();//创建和初始化地图
+    // 留言提交
+    //封装“登录提示信息”
+    function tetxPmt(msg) {
+        $("#pmt").show()
+        $("#pmt span").html(msg)
+    }
+    // vue
+    var contactshow = new Vue({
+        el: "#bodys",
+        data: {
+            view: {},
+            msg: {
+                name: "",
+                tel: "",
+                content: "",
+            }
+        },
+        ready: function () {
+            //加载的时候运行的
+            $.ajax({
+                url: "{:url('index/Contact/system')}",
+                success: function (data) {
+                    data = JSON.parse(data); //将字符串转换成json格式         
+                    contactshow.view = data;//将数据赋值到view对象
+                },
+                error: function (data) {
+                    console.log("error!");
+                }
+            });
+        }, methods: {
+            submit: function () {
+                var phoneReg = /^1[34578]\d{9}$/;//手机号码格式验证
+                var name = this.msg.name;
+                var tel = this.msg.tel;
+                var content = this.msg.content;
+                if (name == "") {
+                    tetxPmt("姓名不能为空!")
+                } else if (tel == "") {
+                    tetxPmt("电话不能为空!")
+                }
+                else if (!phoneReg.test(tel)) {
+                    tetxPmt("手机格式错误");
+                }
+                else if (content == "") {
+                    tetxPmt("留言内容不能为空!")
+                } else {
+                    $.ajax({
+                        url: "{:url('index/Contact/msg')}",
+                        dataType: "json",
+                        data: this.msg,
+                        type: "post",
+                        success: function (data) {
+                            tetxPmt("提交成功!");
+
+                        },
+                        error: function (data) {
+                            console.log("error!");
+                        }
+                    });
+                }
+            }
+
+
+        }
+    })
+</script>
+
+</html>

@@ -1,0 +1,52 @@
+{extend name="pub/extend" /}
+
+{block name="title"}
+<title>留言板</title>
+{/block}
+
+{block name="link"}
+
+{/block}
+
+{block name="bread"}
+<ul class="breadcrumb">
+    <li>
+        <a href="#">首页</a>
+    </li>
+    <li class="active">留言板</li>
+</ul>
+{/block}
+
+{block name="content"}
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="panel">
+            <header class="panel-heading">
+                留言板
+            </header>
+            <div class="panel-body">
+                <ul class="chats cool-chat">
+                    {volist name="msg" id="vo"}
+                    <li class="in">
+                        <img src="__PUBLIC__/images/touxiang.jpg" alt="" class="avatar">
+                        <div class="message">
+                            <span class="arrow"></span>
+                            <a class="name" href="javascript:;">{$vo.name}</a>
+                            <span class="datetime">&nbsp;&nbsp;日期:{$vo.createtime|date="Y-m-d H:i:s",###}</span>
+                            <span class="datetime">&nbsp;&nbsp;手机:{$vo.tel}</span>
+                            <span class="body">
+                                {$vo.content}
+                            </span>
+                        </div>
+                    </li>
+                    {/volist}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
+
+{block name="js"}
+
+{/block}

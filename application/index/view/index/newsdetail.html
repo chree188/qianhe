@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html id="bodys">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="keywords" content="{$system.seo_keywords}">
+    <meta name="description" content="{$system.seo_description}">
+    <title>新闻详情</title>
+    <link rel="icon" type="image/png" href="__PUBLIC__/images/favicon.png">
+    <link href="__PUBLIC__/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="__PUBLIC__/css/public.css" rel="stylesheet" type="text/css" />
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <!-- 必要样式 -->
+    <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <!--<script src="__PUBLIC__/js/map.js"></script>-->
+    <script src="__PUBLIC__/js/prodetail.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
+</head>
+
+<body id="bodys">
+    <div class="container1">
+        <!--pc头部-->
+        <div class="header visible-lg-block ">
+            <div class="headercenter">
+                <div class="logo fl">
+                    <a href="index.html"> <img alt="乾禾智能" src="__PUBLIC__/images/logo.png"></a>
+                </div>
+                <ul class="headnav fl">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="aboutus.html">关于我们</a></li>
+                    <li>
+                        <a href="product.html">产品展示</a>
+                        <ul>
+                            <li><a href="product.html#qhzn">乾禾智能</a></li>
+                            <li><a href="product.html#qhnt">乾禾暖通</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="cases.html">案例展示</a></li>
+                    <li><a href="culture.html">企业文化</a></li>
+                    <li><a href="honor.html">企业荣誉</a></li>
+                    <li><a href="news.html">新闻资讯</a></li>
+                    <li><a href="contact.html">联系我们</a></li>
+                </ul>
+                <div class="tel fl">
+                    <img src="__PUBLIC__/images/phone.png" class="fl">
+                    <div class="telnum fl">
+                        <p>资讯热线 </p>
+                        <p>400-600-1366</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--移动端头部-->
+        <nav class="navbar navbar-default visible-xs-block">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                        aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        </button>
+                    <a class="navbarimg" href="index.html">
+                        <img alt="乾禾智能" src="__PUBLIC__/images/logo.png">
+                    </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="aboutus.html">关于我们</a></li>
+                        <li><a href="product.html">产品展示</a></li>
+                        <li><a href="cases.html">案例展示</a></li>
+                        <li><a href="culture.html">企业文化</a></li>
+                        <li><a href="honor.html">企业荣誉</a></li>
+                        <li><a href="news.html">新闻资讯</a></li>
+                        <li><a href="contact.html">联系我们</a></li>
+                    </ul>
+
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+        <!--内页banner-->
+        <div class="nybanner"></div>
+        <!--位置-->
+        <div class="position">
+            您现在的位置:产品详情
+        </div>
+        <div class="protitle">
+            <h1 class="col-xs-12">{{view.news.title}}</h1>
+            <p>发表日期：{{view.news.createtime|datatime}} 文章编辑：乾禾智能 浏览次数：{{view.news.bro_num}}</p>
+        </div>
+        <!--详情-->
+        <div class="Prodetail">
+            <div id="wrapper">
+                <div class="newsdetailnr col-xs-12" v-html="view.news.content">
+                </div>
+            </div>
+        </div>
+        <div class="prevnews">
+            <div class="col-xs-6">
+                <a href="newsdetail.html?id={{view.upDown.next.id}}">上一篇:{{view.upDown.next.title}}</a>
+            </div>
+            <div class="col-xs-6">
+                <a href="newsdetail.html?id={{view.upDown.prev.id}}">下一篇:{{view.upDown.prev.title}}</a>
+            </div>
+        </div>
+        <!--移动空格块-->
+        <div class="mblank visible-xs-block"></div>
+        <!--底部-->
+        <div class="bottom fl visible-lg-block">
+            <div class="bottomup">
+                <div class="bottomnav">
+                    <em>关于我们</em>
+                    <ul>
+                        <li><a href="aboutus.html">关于我们</a></li>
+                        <li><a href="culture.html">企业文化</a></li>
+                        <li><a href="honor.html">企业荣誉</a></li>
+                        <li><a href="news.html">新闻资讯</a></li>
+                    </ul>
+                </div>
+                <div class="bottomnav">
+                    <em>产品案例</em>
+                    <ul>
+                        <li><a href="product.html">产品中心</a></li>
+                        <li><a href="cases.html">案例展示</a></li>
+                    </ul>
+                </div>
+                <div class="bottomnav">
+                    <em>联系我们</em>
+                    <ul>
+                        <li><a href="contact.html">联系方式</a></li>
+                        <li><a href="contact.html">公司地址</a></li>
+                        <li><a href="tencent://message/?uin=3563713402&amp;Site=有事Q我&amp;Menu=yes">在线咨询</a></li>
+                    </ul>
+                </div>
+                <div class="bottomtel fl">
+                    <ul>
+                        <li class="li-tel">
+                            电话<br>
+                            <strong>0571-87381866	88231138</strong>
+                        </li>
+                        <li class="li-fox">
+                            传真<br>
+                            <strong>0571-85263910</strong>
+                        </li>
+                        <li class="li-phone">
+                            全国客服热线<br>
+                            <strong>400-600-1366</strong>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bottomweixin fr">
+                    <ul>
+                        <li>
+                            <img src="__PUBLIC__/images/weixin1.png">
+                            <p>杭州乾禾科技有限公司</p>
+                            <p>官方微信</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bottomdown">
+                <div class="bottomdownin">
+                    <div class="fl ft-logo">
+                        <p class="f12">杭州乾禾科技有限公司 版权所有 © 2017 粤ICP备12345678号-9</p>
+                    </div>
+                    <div class="fr ft-address">
+                        <p class="f14">杭州市西湖区古墩路707号城市发展大厦901</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--移动端底部-->
+        <div class="mbottom fl visible-xs-block">
+            <div class="col-xs-4" style="border-right:2px solid #fff;"><a href="index.html">首页</a></div>
+            <div class="col-xs-4" style="border-right:2px solid #fff;"><i class="fa fa-qq" aria-hidden="true"></i><a href="tencent://message/?uin=3563713402&amp;Site=有事Q我&amp;Menu=yes">在线咨询</a></div>
+            <div class="col-xs-4"><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:0571-85263910">客服热线</a></div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    $(window).scroll(function () {
+        // var t = document.documentElement.scrollTop || document.body.scrollTop;
+        var scrollTop = $(this).scrollTop();//scrollTop() 方法返回或设置匹配元素的滚动条的垂直位置。
+        if (scrollTop >= 300) {
+            $('.header').addClass("header2")
+        }
+    });
+
+
+    // vuejs
+    var newsshow = new Vue({
+        el: "#bodys",
+        data: {
+            view: {},
+        },
+        ready: function () {
+            $.ajax({
+                url: "{:url('index/News/detail')}",
+                type: "post",
+                data: { id: GetQueryString("id") },
+                success: function (data) {
+                    data = JSON.parse(data); //将字符串转换成json格式         
+                    newsshow.view = data;//将数据赋值到view对象
+                },
+                error: function (data) {
+                    console.log("error!");
+                }
+            });
+        }
+    });
+    // js获取url的参数
+    function GetQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
+    //时间过滤器
+    Vue.filter('datatime', function (time) {
+        var time = new Date(parseInt(time) * 1000); //获取一个时间对象  注意：如果是uinx时间戳记得乘于1000。比如php函数time()获得的时间戳就要乘于1000     
+        Y = time.getFullYear() + '-';
+        M = (time.getMonth() + 1 < 10 ? '0' + (time.getMonth() + 1) : time.getMonth() + 1) + '-';
+        D = time.getDate() + ' ';
+        h = (time.getHours() < 10 ? '0' + time.getHours() : time.getHours()) + ':';
+        m = (time.getMinutes() < 10 ? '0' + time.getMinutes() : time.getMinutes()) + ':';
+        s = (time.getSeconds() < 10 ? '0' + time.getSeconds() : time.getSeconds());
+        return Y + M + D;
+    })
+
+</script>
+
+</html>

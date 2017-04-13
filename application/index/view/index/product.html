@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html id="bodys">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="keywords" content="{$system.seo_keywords}">
+    <meta name="description" content="{$system.seo_description}">
+    <title>产品展示</title>
+    <link rel="icon" type="image/png" href="__PUBLIC__/images/favicon.png">
+    <link href="__PUBLIC__/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="__PUBLIC__/css/public.css" rel="stylesheet" type="text/css" />
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <!-- 必要样式 -->
+    <link href="http://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
+</head>
+
+<body id="bodys">
+    <div class="container1">
+        <!--pc头部-->
+        <div class="header visible-lg-block ">
+            <div class="headercenter">
+                <div class="logo fl">
+                    <a href="index.html"> <img alt="乾禾智能" src="__PUBLIC__/images/logo.png"></a>
+                </div>
+                <ul class="headnav fl">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="aboutus.html">关于我们</a></li>
+                    <li>
+                        <a href="product.html">产品展示</a>
+                        <ul>
+                            <li><a href="product.html#qhzn">乾禾智能</a></li>
+                            <li><a href="product.html#qhnt">乾禾暖通</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="cases.html">案例展示</a></li>
+                    <li><a href="culture.html">企业文化</a></li>
+                    <li><a href="honor.html">企业荣誉</a></li>
+                    <li><a href="news.html">新闻资讯</a></li>
+                    <li><a href="contact.html">联系我们</a></li>
+                </ul>
+                <div class="tel fl">
+                    <img src="__PUBLIC__/images/phone.png" class="fl">
+                    <div class="telnum fl">
+                        <p>资讯热线 </p>
+                        <p>400-600-1366</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--移动端头部-->
+        <nav class="navbar navbar-default visible-xs-block">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                        aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        </button>
+                    <a class="navbarimg" href="index.html">
+                        <img alt="乾禾智能" src="__PUBLIC__/images/logo.png">
+                    </a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="index.html">首页</a></li>
+                        <li><a href="aboutus.html">关于我们</a></li>
+                        <li><a href="product.html">产品展示</a></li>
+                        <li><a href="cases.html">案例展示</a></li>
+                        <li><a href="culture.html">企业文化</a></li>
+                        <li><a href="honor.html">企业荣誉</a></li>
+                        <li><a href="news.html">新闻资讯</a></li>
+                        <li><a href="contact.html">联系我们</a></li>
+                    </ul>
+
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+        <!--内页banner-->
+        <div class="nybanner"></div>
+        <!--位置-->
+        <div class="position">
+            您现在的位置:产品展示
+        </div>
+        <!--产品1-->
+        <a name="qhzn"></a>
+        <div class="product1">
+            <div class="nytitle">
+                <i></i>
+                <em>智能您的家</em>
+                <h1>智能家居</h1>
+                <font>致力于智能家居的整合、嫁接、研发，把现代智能化高科技融入百姓生活
+                </font>
+            </div>
+            <div class="visible-lg-block">
+                <ul class="prostab">
+                    <li class="newstitle newstitletab">智能系统</li>
+                    <li class="newstitle ">安防</li>
+                    <li class="newstitle ">监控</li>
+                    <li class="newstitle ">电动窗轨</li>
+                    <li class="newstitle ">背景音乐</li>
+                    <li class="newstitle ">无线AP</li>
+                    <li class="newstitle ">家庭影院</li>
+                    <li class="newstitle ">卡拉OK</li>
+                    <li class="newstitle ">可视门禁</li>
+                    <li class="newstitle ">指纹锁</li>
+                    <li class="newstitle ">手机信号放大</li>
+                    <li class="newstitle ">视频矩阵</li>
+                </ul>
+                <div class="proshow probox1">
+                    <ul>
+                        <li v-for="pro in view.productLst1">
+                            <a href="productdetail.html?id={{pro.id}}">
+                                <img src="__IMAGE__/{{pro.thumb}}">
+                                <span>{{pro.title}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="proshow probox1" style="display:none;">
+                    <ul>
+                        <li v-for="pro in view.productLst2">
+                            <a href="productdetail.html?id={{pro.id}}">
+                                <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                                <span>{{pro.title}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="proshow probox1" style="display:none;">
+                    <ul>
+                        <li v-for="pro in view.productLst3">
+                            <a href="productdetail.html?id={{pro.id}}">
+                                <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                                <span>{{pro.title}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="proshow probox1" style="display:none;">
+                    <ul>
+                        <li v-for="pro in view.productLst4">
+                            <a href="productdetail.html?id={{pro.id}}">
+                                <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                                <span>{{pro.title}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="proshow probox1" style="display:none;">
+                    <ul>
+                        <li v-for="pro in view.productLst5">
+                            <a href="productdetail.html?id={{pro.id}}">
+                                <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                                <span>{{pro.title}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="proshow probox1" style="display:none;">
+                    <ul>
+                        <li v-for="pro in view.productLst6">
+                            <a href="productdetail.html?id={{pro.id}}">
+                                <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                                <span>{{pro.title}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="proshow probox1" style="display:none;">
+                    <ul>
+                        <li v-for="pro in view.productLst7">
+                            <a href="productdetail.html?id={{pro.id}}">
+                                <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                                <span>{{pro.title}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="proshow probox1" style="display:none;">
+                    <ul>
+                        <li v-for="pro in view.productLst8">
+                            <a href="productdetail.html?id={{pro.id}}">
+                                <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                                <span>{{pro.title}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="proshow probox1" style="display:none;">
+                    <ul>
+                        <li v-for="pro in view.productLst9">
+                            <a href="productdetail.html?id={{pro.id}}">
+                                <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                                <span>{{pro.title}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="proshow probox1" style="display:none;">
+                    <ul>
+                        <li v-for="pro in view.productLst10">
+                            <a href="productdetail.html?id={{pro.id}}">
+                                <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                                <span>{{pro.title}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="proshow probox1" style="display:none;">
+                    <ul>
+                        <li v-for="pro in view.productLst11">
+                            <a href="productdetail.html?id={{pro.id}}">
+                                <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                                <span>{{pro.title}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="proshow probox1" style="display:none;">
+                    <ul>
+                        <li v-for="pro in view.productLst12">
+                            <a href="productdetail.html?id={{pro.id}}">
+                                <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                                <span>{{pro.title}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!--移动端数据-->
+            <div class="col-xs-12 visible-xs-block">
+                <template v-for="pro in view.productLst1">
+                    <div class="mpro col-xs-6">
+                        <a href="productdetail.html?id={{pro.id}}">
+                            <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                        </a>
+                    </div>
+                </template>
+                <template v-for="pro in view.productLst2">
+                    <div class="mpro col-xs-6">
+                        <a href="productdetail.html?id={{pro.id}}">
+                            <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                        </a>
+                    </div>
+                </template>
+                <template v-for="pro in view.productLst3">
+                    <div class="mpro col-xs-6">
+                        <a href="productdetail.html?id={{pro.id}}">
+                            <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                        </a>
+                    </div>
+                </template>
+                <template v-for="pro in view.productLst4">
+                    <div class="mpro col-xs-6">
+                        <a href="productdetail.html?id={{pro.id}}">
+                            <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                        </a>
+                    </div>
+                </template>
+                <template v-for="pro in view.productLst5">
+                    <div class="mpro col-xs-6">
+                        <a href="productdetail.html?id={{pro.id}}">
+                            <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                        </a>
+                    </div>
+                </template>
+                <template v-for="pro in view.productLst6">
+                    <div class="mpro col-xs-6">
+                        <a href="productdetail.html?id={{pro.id}}">
+                            <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                        </a>
+                    </div>
+                </template>
+
+                <template v-for="pro in view.productLst7">
+                    <div class="mpro col-xs-6">
+                        <a href="productdetail.html?id={{pro.id}}">
+                            <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                        </a>
+                    </div>
+                </template>
+                <template v-for="pro in view.productLst8">
+                    <div class="mpro col-xs-6">
+                        <a href="productdetail.html?id={{pro.id}}">
+                            <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                        </a>
+                    </div>
+                </template>
+                <template v-for="pro in view.productLst9">
+                    <div class="mpro col-xs-6">
+                        <a href="productdetail.html?id={{pro.id}}">
+                            <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                        </a>
+                    </div>
+                </template>
+                <template v-for="pro in view.productLst10">
+                    <div class="mpro col-xs-6">
+                        <a href="productdetail.html?id={{pro.id}}">
+                            <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                        </a>
+                    </div>
+                </template>
+                <template v-for="pro in view.productLst11">
+                    <div class="mpro col-xs-6">
+                        <a href="productdetail.html?id={{pro.id}}">
+                            <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                        </a>
+                    </div>
+                </template>
+                <template v-for="pro in view.productLst12">
+                    <div class="mpro col-xs-6">
+                        <a href="productdetail.html?id={{pro.id}}">
+                            <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                        </a>
+                    </div>
+                </template>
+            </div>
+        </div>
+        <!--pro背景-->
+        <div class="probg fl visible-lg-block">
+            <div class="probgbox">
+                <h1>乾禾智能</h1>
+                <span>中国智能家居的领航者</span>
+            </div>
+        </div>
+        <!--产品2-->
+        <a name="qhnt"></a>
+        <div class="product2 fl">
+            <div class="nytitle">
+                <i></i>
+                <em>更温暖、更舒适</em>
+                <h1>乾禾暖通</h1>
+                <font>致力于为用户提供一站式体验服务和整体解决方案
+                </font>
+            </div>
+            <div class="visible-lg-block">
+                <ul class="newstab">
+                    <li class="newstitle newstitletab">中央空调</li>
+                    <li class="newstitle ">中央采暖</li>
+                    <li class="newstitle ">中央水处理</li>
+                    <li class="newstitle ">中央新风</li>
+                    <li class="newstitle ">中央除湿</li>
+                    <li class="newstitle ">中央除尘</li>
+                    <li class="newstitle ">生活热水</li>
+                </ul>
+                <div class="proshow probox2">
+                    <ul>
+                        <li v-for="pro in view.productLst13">
+                            <a href="productdetail.html?id={{pro.id}}">
+                                <img src="__IMAGE__/{{pro.thumb}}">
+                                <span>{{pro.title}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="proshow probox2" style="display:none;">
+                    <ul>
+                        <li v-for="pro in view.productLst14">
+                            <a href="productdetail.html?id={{pro.id}}">
+                                <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                                <span>{{pro.title}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="proshow probox2" style="display:none;">
+                    <ul>
+                        <li v-for="pro in view.productLst15">
+                            <a href="productdetail.html?id={{pro.id}}">
+                                <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                                <span>{{pro.title}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="proshow probox2" style="display:none;">
+                    <ul>
+                        <li v-for="pro in view.productLst16">
+                            <a href="productdetail.html?id={{pro.id}}">
+                                <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                                <span>{{pro.title}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="proshow probox2" style="display:none;">
+                    <ul>
+                        <li v-for="pro in view.productLst17">
+                            <a href="productdetail.html?id={{pro.id}}">
+                                <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                                <span>{{pro.title}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="proshow probox2" style="display:none;">
+                    <ul>
+                        <li v-for="pro in view.productLst18">
+                            <a href="productdetail.html?id={{pro.id}}">
+                                <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                                <span>{{pro.title}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="proshow probox2" style="display:none;">
+                    <ul>
+                        <li v-for="pro in view.productLst19">
+                            <a href="productdetail.html?id={{pro.id}}">
+                                <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                                <span>{{pro.title}}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="visible-xs-block">
+                <!--移动端数据-->
+                <div class="col-xs-12">
+                    <template v-for="pro in view.productLst4">
+                        <div class="mpro col-xs-6">
+                            <a href="productdetail.html?id={{pro.id}}">
+                                <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                            </a>
+                        </div>
+                    </template>
+                    <template v-for="pro in view.productLst5">
+                        <div class="mpro col-xs-6">
+                            <a href="productdetail.html?id={{pro.id}}">
+                                <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                            </a>
+                        </div>
+                    </template>
+                    <template v-for="pro in view.productLst6">
+                        <div class="mpro col-xs-6">
+                            <a href="productdetail.html?id={{pro.id}}">
+                                <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                            </a>
+                        </div>
+                    </template>
+                    <template v-for="pro in view.productLst7">
+                        <div class="mpro col-xs-6">
+                            <a href="productdetail.html?id={{pro.id}}">
+                                <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                            </a>
+                        </div>
+                    </template>
+                    <template v-for="pro in view.productLst8">
+                        <div class="mpro col-xs-6">
+                            <a href="productdetail.html?id={{pro.id}}">
+                                <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                            </a>
+                        </div>
+                    </template>
+                    <template v-for="pro in view.productLst9">
+                        <div class="mpro col-xs-6">
+                            <a href="productdetail.html?id={{pro.id}}">
+                                <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                            </a>
+                        </div>
+                    </template>
+                    <template v-for="pro in view.productLst10">
+                        <div class="mpro col-xs-6">
+                            <a href="productdetail.html?id={{pro.id}}">
+                                <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                            </a>
+                        </div>
+                    </template>
+                    <template v-for="pro in view.productLst11">
+                        <div class="mpro col-xs-6">
+                            <a href="productdetail.html?id={{pro.id}}">
+                                <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                            </a>
+                        </div>
+                    </template>
+                    <template v-for="pro in view.productLst12">
+                        <div class="mpro col-xs-6">
+                            <a href="productdetail.html?id={{pro.id}}">
+                                <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                            </a>
+                        </div>
+                    </template>
+                    <template v-for="pro in view.productLst13">
+                        <div class="mpro col-xs-6">
+                            <a href="productdetail.html?id={{pro.id}}">
+                                <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                            </a>
+                        </div>
+                    </template>
+                    <template v-for="pro in view.productLst14">
+                        <div class="mpro col-xs-6">
+                            <a href="productdetail.html?id={{pro.id}}">
+                                <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                            </a>
+                        </div>
+                    </template>
+                    <template v-for="pro in view.productLst15">
+                        <div class="mpro col-xs-6">
+                            <a href="productdetail.html?id={{pro.id}}">
+                                <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                            </a>
+                        </div>
+                    </template>
+                    <template v-for="pro in view.productLst16">
+                        <div class="mpro col-xs-6">
+                            <a href="productdetail.html?id={{pro.id}}">
+                                <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                            </a>
+                        </div>
+                    </template>
+                    <template v-for="pro in view.productLst17">
+                        <div class="mpro col-xs-6">
+                            <a href="productdetail.html?id={{pro.id}}">
+                                <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                            </a>
+                        </div>
+                    </template>
+                    <template v-for="pro in view.productLst18">
+                        <div class="mpro col-xs-6">
+                            <a href="productdetail.html?id={{pro.id}}">
+                                <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                            </a>
+                        </div>
+                    </template>
+                    <template v-for="pro in view.productLst19">
+                        <div class="mpro col-xs-6">
+                            <a href="productdetail.html?id={{pro.id}}">
+                                <img src="__IMAGE__/{{pro.thumb}}" onerror="this.src='http://qunkong.hzshihe.cn/static/index/images/error_banner.png'">
+                            </a>
+                        </div>
+                    </template>
+                </div>
+            </div>
+        </div>
+
+        <!--底部-->
+        <div class="bottom fl visible-lg-block">
+            <div class="bottomup">
+                <div class="bottomnav">
+                    <em>关于我们</em>
+                    <ul>
+                        <li><a href="aboutus.html">关于我们</a></li>
+                        <li><a href="culture.html">企业文化</a></li>
+                        <li><a href="honor.html">企业荣誉</a></li>
+                        <li><a href="news.html">新闻资讯</a></li>
+                    </ul>
+                </div>
+                <div class="bottomnav">
+                    <em>产品案例</em>
+                    <ul>
+                        <li><a href="product.html">产品中心</a></li>
+                        <li><a href="cases.html">案例展示</a></li>
+                    </ul>
+                </div>
+                <div class="bottomnav">
+                    <em>联系我们</em>
+                    <ul>
+                        <li><a href="contact.html">联系方式</a></li>
+                        <li><a href="contact.html">公司地址</a></li>
+                        <li><a href="tencent://message/?uin=3563713402&amp;Site=有事Q我&amp;Menu=yes">在线咨询</a></li>
+                    </ul>
+                </div>
+                <div class="bottomtel fl">
+                    <ul>
+                        <li class="li-tel">
+                            电话<br>
+                            <strong>0571-87381866	88231138</strong>
+                        </li>
+                        <li class="li-fox">
+                            传真<br>
+                            <strong>0571-85263910</strong>
+                        </li>
+                        <li class="li-phone">
+                            全国客服热线<br>
+                            <strong>400-600-1366</strong>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bottomweixin fr">
+                    <ul>
+                        <li>
+                            <img src="__PUBLIC__/images/weixin1.png">
+                            <p>杭州乾禾科技有限公司</p>
+                            <p>官方微信</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bottomdown">
+                <div class="bottomdownin">
+                    <div class="fl ft-logo">
+                        <p class="f12">杭州乾禾科技有限公司 版权所有 © 2017 粤ICP备12345678号-9</p>
+                    </div>
+                    <div class="fr ft-address">
+                        <p class="f14">杭州市西湖区古墩路707号城市发展大厦901</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--移动端底部-->
+        <div class="mbottom fl visible-xs-block">
+            <div class="col-xs-4" style="border-right:2px solid #fff;"><a href="index.html">首页</a></div>
+            <div class="col-xs-4" style="border-right:2px solid #fff;"><i class="fa fa-qq" aria-hidden="true"></i><a href="tencent://message/?uin=3563713402&amp;Site=有事Q我&amp;Menu=yes">在线咨询</a></div>
+            <div class="col-xs-4"><i class="fa fa-phone" aria-hidden="true"></i><a href="tel:0571-85263910">客服热线</a></div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+                                                                            $('img').error(function () {
+                                                                                $(this).attr('src', "__PUBLIC__/images/error_banner.jpg");
+                                                                            });
+                                                                            $(window).scroll(function () {
+                                                                                // var t = document.documentElement.scrollTop || document.body.scrollTop;
+                                                                                var scrollTop = $(this).scrollTop();//scrollTop() 方法返回或设置匹配元素的滚动条的垂直位置。
+                                                                                if (scrollTop >= 300) {
+                                                                                    $('.header').addClass("header2")
+                                                                                }
+                                                                            });
+                                                                            // 产品tab切换
+                                                                            $(function () {
+                                                                                $('.prostab li').on('click', function () {
+                                                                                    $(this).addClass("newstitletab").siblings().removeClass("newstitletab");//控制样式
+                                                                                    var index = $(this).index();//获取当前选中的索引值
+                                                                                    $(".probox1").hide().eq(index).show();
+                                                                                })
+                                                                            })
+                                                                            // 产品2tab切换
+                                                                            $(function () {
+                                                                                $('.newstab li').on('click', function () {
+                                                                                    $(this).addClass("newstitletab").siblings().removeClass("newstitletab");//控制样式
+                                                                                    var index = $(this).index();//获取当前选中的索引值
+                                                                                    $(".probox2").hide().eq(index).show();
+                                                                                })
+                                                                            })
+                                                                            // vuejs
+                                                                            var productshow = new Vue({
+                                                                                el: "#bodys",
+                                                                                data: {
+                                                                                    view: {},
+                                                                                },
+                                                                                ready: function () {
+                                                                                    $.ajax({
+                                                                                        type: "get",
+                                                                                        url: "{:url('index/Product/productLst')}",
+                                                                                        success: function (data) {
+                                                                                            data = JSON.parse(data); //将字符串转换成json格式         
+                                                                                            productshow.view = data;//将数据赋值到view对象
+                                                                                        },
+                                                                                        error: function (data) {
+                                                                                            console.log("error!");
+                                                                                        }
+                                                                                    });
+                                                                                }, methods: {
+                                                                                    proclick: function (e) {
+                                                                                        console.log(e.target)
+                                                                                    }
+                                                                                }
+                                                                            });
+
+</script>
+
+</html>

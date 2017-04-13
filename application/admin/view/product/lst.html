@@ -1,0 +1,177 @@
+{extend name="pub/extend" /}
+
+{block name="title"}
+    <title>产品中心 - 产品列表</title>
+{/block}
+
+{block name="link"}
+    <!--dynamic table-->
+    <link href="__PUBLIC__/js/advanced-datatable/css/demo_page.css" rel="stylesheet" />
+    <link href="__PUBLIC__/js/advanced-datatable/css/demo_table.css" rel="stylesheet" />
+    <link rel="stylesheet" href="__PUBLIC__/js/data-tables/DT_bootstrap.css" />
+{/block}
+
+{block name="bread"}
+    <ul class="breadcrumb">
+        <li>
+            <a href="{:url('Index/index')}">首页</a>
+        </li>
+        <li class="active">产品列表</li>
+    </ul>
+{/block}
+
+{block name="content"}
+    <div class="row">
+    <div class="col-sm-12">
+    <form id="form1" name="form1" action="{:url('Product/delAll')}" method="post">
+    <section class="panel">
+    <header class="panel-heading">
+        <a href="{:url('Product/add')}">
+            <button class="btn btn-sm btn-success" type="button"><i class="fa fa-plus-square"></i>&nbsp;&nbsp;添加</button>
+        </a>
+        <button class="btn btn-sm btn-danger" type="submit">
+            <i class="fa fa-trash-o"></i>&nbsp;&nbsp;删除
+        </button>
+        <span class="tools pull-right">
+            <a href="javascript:;" class="fa fa-chevron-down"></a>
+            <a href="javascript:;" class="fa fa-times"></a>
+        </span>
+    </header>
+    <div class="panel-body">
+    <div class="adv-table">
+    <table  class="display table table-bordered table-striped" id="dynamic-table">
+    <thead>
+    <tr>
+        <th style="text-align:center;" width="60"><input id="checkall" type="checkbox"></th>
+        <th style="text-align:center;">ID</th>
+        <th style="text-align:center;">标题</th>
+        <th style="text-align:center;">描述</th>
+        <th style="text-align:center;">分类</th>
+        <th style="text-align:center;">创建时间</th>
+        <!-- <th style="text-align:center;">功能特点</th> -->
+        <th style="text-align:center;">产品图</th>
+        <th style="text-align:center;" width="70">显示</th>
+        <th style="text-align:center;">操作</th>
+    </tr>
+    </thead>
+    <tbody>
+        {volist name="product" id="vo"}
+            <tr>
+                <td class="center">
+                    <input type="checkbox" name="check[]" value="{$vo.id}" />
+                </td>
+                <td class="center">{$vo.id}</td>
+                <td class="center"><?php echo mb_substr($vo['title'],0,23,"utf-8"); ?></td>
+                <td class="center"><?php echo mb_substr($vo['description'],0,23,"utf-8"); ?></td>
+                <td class="center">{$vo.catename}</td>
+                <td class="center">{$vo.createtime|date="Y-m-d H:i",###}</td>
+                <!-- <td class="center">
+                    <a href="{:url('Product/editChara',array('id'=>$vo['id']))}" class="btn btn-xs btn-default" title="点我编辑">
+                        <i class="fa fa-magic"></i> 功能</button>
+                    </a>
+                </td> -->
+                <td class="center">
+                    <a href="{:url('Product/editPic',array('id'=>$vo['id']))}" class="btn btn-xs btn-default" title="点我编辑">
+                        <i class="fa fa-picture-o"></i> 图片</button>
+                    </a>
+                </td>
+                <td>
+                    {if condition="$vo['status'] eq 1"}
+                        <a href="javascript:void(0);" onclick="show({$vo.id},this)"><img src="__PUBLIC__/images/ok.png" style="margin-left: 10px;"></a>
+                    {else /}
+                        <a href="javascript:void(0);" onclick="show({$vo.id},this)"><img src="__PUBLIC__/images/cancel.png" style="margin-left: 10px;"></a>
+                    {/if}
+                </td>
+                <td class="center">
+                    <a href="{:url('Product/edit',array('id'=>$vo['id']))}">
+                        <button class="btn btn-xs btn-info" type="button"><i class="fa fa-pencil"></i> 编辑</button>
+                    </a>
+                    <a href="#myModal2" data-toggle="modal" onclick="delData({$vo.id})" class="btn btn-xs btn-danger">
+                        <i class="fa fa-trash-o"></i> 删除
+                    </a>
+                </td>
+            </tr>
+        {/volist}
+    </tbody>
+
+    </table>
+    </div>
+    </div>
+    </section>
+    </form>
+    </div>
+    </div>
+
+    <!-- Modal -->
+    <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal2" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                    <h4 class="modal-title">删除产品</h4>
+                </div>
+                <div class="modal-body">
+
+                    确定要删除产品吗?删除后将不能恢复...
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <a  onclick="del()" class="btn btn-warning"> 确定</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal -->
+
+
+{/block}
+
+{block name="js"}
+    <!--dynamic table-->
+    <script type="text/javascript" language="javascript" src="__PUBLIC__/js/advanced-datatable/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/data-tables/DT_bootstrap.js"></script>
+    <!--dynamic table initialization -->
+    <script src="__PUBLIC__/js/dynamic_table_init.js"></script>
+
+    <!--gritter script-->
+    <script type="text/javascript" src="__PUBLIC__/js/gritter/js/jquery.gritter.js"></script>
+    <script src="__PUBLIC__/js/gritter/js/gritter-init.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        //全选/取消全选
+        $("#checkall").click(function(){
+            if(this.checked){
+                $("tbody input[type=checkbox]").prop("checked",true);
+            }else{
+                $("tbody input[type=checkbox]").prop("checked",false);
+            }
+        });
+
+        //显示/不显示
+        function show(id,obj){
+            $.ajax({
+                type:'post',
+                url:"{:url('Product/show')}",
+                data:{'id':id},
+                dataType:'json',
+                success:function(data){
+                    if (data.txt == 'show') {
+                        $(obj).children().attr('src','__PUBLIC__/images/ok.png');
+                    } else if(data.txt == 'blank') {
+                        $(obj).children().attr('src','__PUBLIC__/images/cancel.png');
+                    }
+                }
+            })
+        }
+
+        //确认删除后跳转
+        function delData(id){
+            pid = id;
+        }
+        function del(){
+            window.location.href="{:url('Product/del')}?id="+pid;
+        }
+
+    </script>
+{/block}

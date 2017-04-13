@@ -1,0 +1,151 @@
+{extend name="pub/extend" /}
+
+{block name="title"}
+    <title>添加案例</title>
+{/block}
+
+{block name="link"}
+    <!--dynamic table-->
+    <link href="__PUBLIC__/js/advanced-datatable/css/demo_page.css" rel="stylesheet" />
+    <link href="__PUBLIC__/js/advanced-datatable/css/demo_table.css" rel="stylesheet" />
+    <link rel="stylesheet" href="__PUBLIC__/js/data-tables/DT_bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/my.css" />
+
+    <!--multi-select-->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/js/jquery-multi-select/css/multi-select.css" />
+
+    <!--file upload-->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/css/bootstrap-fileupload.min.css" />
+
+    <!--tags input-->
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/js/jquery-tags-input/jquery.tagsinput.css" />
+{/block}
+
+{block name="bread"}
+    <ul class="breadcrumb">
+        <li>
+            <a href="{:url('Index/index')}">首页</a>
+        </li>
+        <li>
+            <a href="{:url('Cases/lst')}">案例列表</a>
+        </li>
+        <li class="active">添加案例</li>
+    </ul>
+{/block}
+
+{block name="content"}
+    <!--body wrapper start-->
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <section class="panel">
+                    <header class="panel-heading">
+                        图片添加
+                    </header>
+                    <div class="panel-body">
+                        <div class=" form">
+                            <form class="cmxform form-horizontal adminex-form" id="commentForm" method="post" action="{:url('Cases/add')}" enctype="multipart/form-data">
+                                <div class="form-group ">
+                                    <label for="title" class="control-label col-lg-1">案例标题 <span style="color:red;">(必填*)</span></label>
+                                    <div class="col-lg-11">
+                                        <input class=" form-control" id="title" name="title" maxlength="255" minlength="2" type="text" required="required" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="title" class="control-label col-lg-1">案例内容 <span style="color:red;">(必填*)</span></label>
+                                    <div class="col-lg-11">
+                                        <textarea rows="10" class="form-control" name="content" required="required"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="equ" class="control-label col-lg-1">设别名称 <span style="color:red;">(必填*)</span></label>
+                                    <div id="equ">
+                                        <div class="col-lg-11">
+                                            <input class=" form-control" maxlength="255" id="name" name="name[]" minlength="2" type="text" placeholder="设备名称" required="required" />
+                                        </div><br><br><br>
+                                        <div class="form-group"></div>
+                                    </div>
+                                    <div class="col-lg-10 col-lg-offset-1">
+                                        <a href="javascript:;" class="btn btn-success btn-xs" onclick="addequ()">添加更多特点</a>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-1">案例图片 <span style="color:red;">(必填*)</span></label>
+                                    <div class="controls col-md-1" id="img">
+                                        <div class="fileupload fileupload-new" data-provides="fileupload">
+                                            <span class="btn btn-default btn-file">
+                                                <span class="fileupload-new"><i class="fa fa-paper-clip"></i> 添加图片</span>
+                                                <span class="fileupload-exists"><i class="fa fa-undo"></i> 修改</span>
+                                                <input type="file" name="pic[]" class="default" />
+                                            </span>
+                                            <span class="fileupload-preview" style="margin-left:5px;"></span>
+                                            <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none; margin-left:5px;"></a>
+                                        </div><br>
+                                    </div>
+                                    <div class="col-lg-10 col-lg-offset-1">
+                                        <a href="javascript:;" class="btn btn-success btn-xs" onclick="addimg()">添加更多图片</a>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-lg-offset-1 col-lg-11">
+                                        <button class="btn btn-primary" type="submit">添加案例</button>
+                                        <button class="btn btn-default" type="reset">重新添加</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+{/block}
+
+{block name="js"}
+    <!--dynamic table-->
+    <script type="text/javascript" language="javascript" src="__PUBLIC__/js/advanced-datatable/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/data-tables/DT_bootstrap.js"></script>
+    <!--dynamic table initialization -->
+    <!-- <script src="__PUBLIC__/js/dynamic_table_init.js"></script> -->
+
+    <!--icheck -->
+    <script src="__PUBLIC__/js/iCheck/jquery.icheck.js"></script>
+    <script src="__PUBLIC__/js/icheck-init.js"></script>
+    <!--multi-select-->
+    <script type="text/javascript" src="__PUBLIC__/js/jquery-multi-select/js/jquery.multi-select.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/js/jquery-multi-select/js/jquery.quicksearch.js"></script>
+    <script src="__PUBLIC__/js/multi-select-init.js"></script>
+    <!--spinner-->
+    <script type="text/javascript" src="__PUBLIC__/js/fuelux/js/spinner.min.js"></script>
+    <script src="__PUBLIC__/js/spinner-init.js"></script>
+    <!--file upload-->
+    <script type="text/javascript" src="__PUBLIC__/js/bootstrap-fileupload.min.js"></script>
+    <!--tags input-->
+    <script src="__PUBLIC__/js/jquery-tags-input/jquery.tagsinput.js"></script>
+    <script src="__PUBLIC__/js/tagsinput-init.js"></script>
+    <!--bootstrap input mask-->
+    <script type="text/javascript" src="__PUBLIC__/js/bootstrap-inputmask/bootstrap-inputmask.min.js"></script>
+
+    <!-- uaditor -->
+    <script type="text/javascript" charset="utf-8" src="__PUBLIC__/uaditor/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="__PUBLIC__/uaditor/ueditor.all.min.js"> </script>
+    <script type="text/javascript" charset="utf-8" src="__PUBLIC__/uaditor/lang/zh-cn/zh-cn.js"></script>
+
+    <script type="text/javascript">
+        //实例化编辑器
+        var ue = UE.getEditor('editor');
+    </script>
+
+    <script type="text/javascript">
+        //特点添加更多
+        function addequ(){
+            $('#equ').append("<div class='col-lg-11 col-lg-offset-1'><input class=' form-control' maxlength='255' id='name' name='name[]' minlength='2' type='text' placeholder='设备名称' required='required' /></div><br><br><br>");
+        }
+
+        //图片添加更多
+        function addimg(){
+            $('#img').append("<div class='fileupload fileupload-new' data-provides='fileupload'><span class='btn btn-default btn-file'><span class='fileupload-new'><i class='fa fa-paper-clip'></i> 添加图片</span><span class='fileupload-exists'><i class='fa fa-undo'></i> 修改</span><input type='file' name='pic[]' class='default' /></span><span class='fileupload-preview' style='margin-left:5px;'></span><a href='#' class='close fileupload-exists' data-dismiss='fileupload' style='float: none; margin-left:5px;'></a></div><br>");
+        }
+    </script>
+{/block}
